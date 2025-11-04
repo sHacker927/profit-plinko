@@ -10,7 +10,12 @@ const config = {
   kit: {
     // Static site generation (SSG) is used: https://kit.svelte.dev/docs/adapter-static
     adapter: adapter({
+      pages:"docs",
+      assets:"docs",
       strict: false,
+      paths:{
+        base: process.argv.includes('dev') ? '' : "/profit-plinko"
+      }
     }),
   },
 };
